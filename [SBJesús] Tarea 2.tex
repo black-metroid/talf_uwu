@@ -1,0 +1,68 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+    \title{\textbf{Task 2 - TALF}}
+    \author{Jesús Santos Barba}
+    \date{\today}
+    
+    \addtolength{\topmargin}{-3cm}
+    \addtolength{\textheight}{3cm}
+    \pagenumbering{arabic}
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\section{Specification of the Automaton}
+
+A deterministic finite automaton (DFA) is a 5-tuple $(K, \Sigma, \delta,s, F)$, where
+\begin{enumerate}
+\item $K$ is a non-empty set of states
+\item $\Sigma$ is an alphabet
+\item $s \in K$ is the initial state
+\item $F \subseteq K$ is a set of final states
+\item $\delta: K \times \Sigma \to K$ is the transition function 
+\end{enumerate}
+
+\section{Automaton in JFLAP}
+
+In the first activity we are asked to design a Deterministic Finite Automata (DFA) which accepts the strings formed only by a's. That being done in JFLAP.
+\begin{center}
+	\includegraphics[height=7.5cm]{automata-uwu1.png}
+\end{center}
+
+\footnote{https://github.com/alexandervdm/gummi/wiki/Getting-Involved}
+
+\newpage
+\section{Automaton in Octave}
+A second requirement of the task is to design the automaton in question this time in a JSON file, such that it can be executed on by the Octave environment. The definition looks as follows:
+
+\begin{description}
+\addtolength{\itemindent}{0.80cm}
+\itemsep0em 
+\item["name"] : "activity1" 
+\item["representation"] : \{
+	\subitem "K" : ["q0", "q1", "q2"],
+	\subitem "A" : ["a", "b"],
+	\subitem "s" : ["q0"],
+	\subitem "F" : ["q1"],
+	\subitem "t" : [
+	
+\setlength\parindent{1.3cm}
+			
+			\subitem	["q0", "a", "q1"],
+			\subitem	["q0", "b", "q2"],
+			\subitem	["q1", "a", "q1"],
+			\subitem	["q1", "b", "q2"],
+			\subitem	["q2", "a", "q2"],
+			\subitem	["q2", "b, "q2"]					
+					\ ]
+	\\	
+\}
+
+\end{description}
+
+\setlength\parindent{0cm}
+
+Refer to the \emph{Git repository}\footnote{https://github.com/alexandervdm/gummi/wiki/Getting-Involved} that I leave on the end of the document for more.
+
+\end{document}
