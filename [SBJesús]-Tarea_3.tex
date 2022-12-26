@@ -1,0 +1,84 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+    \title{\textbf{Task 3 - TALF}}
+    \author{Jesús Santos Barba}
+    \date{\today}
+    
+    \addtolength{\topmargin}{-3cm}
+    \addtolength{\textheight}{3cm}
+    \pagenumbering{arabic}
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\section{Definition of a Turing-Machine}
+
+A TM is a 5-tuple $(K, q_0, \Sigma, \gamma, \delta)$, where
+\begin{enumerate}
+	\item $K$ is a non-empty, finite set of states,
+    \item $q_0 \in K$ is the initial state,
+    \item $\Sigma$ is an alphabet, and if $\Sigma_{R}=\{a_0, l, r, h\}$ are reserved words, then $\Sigma \cap \Sigma_{R} = \emptyset$,
+    \item $\gamma: K \times \Sigma_{S} \to \Sigma_{I}$ is the instruction function,
+    \item $\delta: K \times \Sigma_{S}\to K$ is the transition function 
+  \end{enumerate}
+where $\Sigma_{S} = \Sigma \cup \{a_0\}$, $\Sigma_{I} = \Sigma \cup \Sigma_R$ and $a_0$ is often referred as blank symbol.\\
+
+
+\section{Turing-Machine in JFLAP}
+
+As a first task we are asked to design a Turing-Machine based on the solution of the problem 3.4 in the program JFLAP, which is a tool for designing and testing automatons.
+\\\\
+The solution would look like:
+\begin{center}
+	\includegraphics[height=6.223cm]{TM-yisus.jpeg} 
+\end{center}
+
+
+\section{Recursive Function}
+A second requirement of the task is to define a recursive function for the computation of adding three values.
+\\\\
+\textbf{ $>$ add(x, y, z) = $< <\pi_1^{1} | \sigma(\pi_3^{3})> | \sigma(\pi_4^{4}) >$ }
+
+\begin{center}
+	\includegraphics[height=6.223cm]{rec.jpeg} 
+\end{center}
+
+\section{While Program}
+Lastly, we are asked to implement a While program that computes the sum of three values.
+
+\begin{description}
+\addtolength{\itemindent}{0.80cm}
+\itemsep0em 
+\item[sum3 = (3, s)] 
+\item[s] : \{
+	\subitem x4 := 0; 
+	\subitem while x3 $\neq$ 0 do
+	
+\setlength\parindent{1.3cm}
+			
+			\subitem	x4 := x4 + 1;
+			\subitem	x3 := x3 - 1;
+					
+\setlength\parindent{0.00cm}									
+	\subitem od
+	\subitem while x2 $\neq$ 0 do
+
+\setlength\parindent{1.3cm}
+
+		\subitem x4 := x4 + 1;
+		\subitem x2 := x2 - 1;
+
+\setlength\parindent{0.00cm}
+	\subitem od
+	\subitem x1 := x4;
+
+\}
+\\
+\end{description}
+
+\setlength\parindent{0cm}
+
+Refer to the \emph{Git repository}\footnote{https://github.com/black-metroid/talf\_uwu} that I leave on the end of the document for more.
+
+\end{document}

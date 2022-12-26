@@ -1,0 +1,82 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+    \title{\textbf{Task 4 - TALF}}
+    \author{Jesús Santos Barba}
+    \date{\today}
+    
+    \addtolength{\topmargin}{-3cm}
+    \addtolength{\textheight}{3cm}
+    \pagenumbering{arabic}
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\section{Diverge function in While}
+
+As a first task we are asked to define the simplest function that diverges in the While Language model. The purpose is to get the minimun codification of all the programs that represent that same action.
+\\\\
+The program looks like:
+
+\begin{description}
+\addtolength{\itemindent}{0.80cm}
+\itemsep0em 
+\item[diverge = (0, s)] 
+\item[s] : \{
+	\subitem x2 := x1 + 1; 
+	\subitem while x2 $\neq$ 0 do
+	
+\setlength\parindent{1.3cm}
+			
+			\subitem	x1 := 0;
+					
+\setlength\parindent{0.00cm}									
+	\subitem od
+
+\}
+\\
+\end{description}
+The computation looks as follows 
+\\\\
+\textbf{$>$ CODE2N("X2:=X1+1; while X2 != 0 do  X1:=0 od")}
+\\\\
+Now, the codification of this code has as a result the number 10876.
+
+\section{Enumerating Vectors}
+A second requirement of the task is to create an Octave script that enumerates all the vectors. 
+\\\\
+We know that we can establish a biyection between vectors of all sizes and possible values and $\mathbb{N}$. All we need to do is a loop that prints all the set of vectors. The following code prints the N first vectors:
+
+\begin{description}
+\itemsep0em 
+\item [function printNVectors(N)]
+\item for i=0 : N-1
+\addtolength{\itemindent}{0.80cm}
+\item disp(['(' num2str(godeldecoding(i)) ')'])
+\addtolength{\itemindent}{0.00cm}
+\item end
+\item end
+\end{description}
+
+\section{Enumerating While Programs}
+Lastly, we are asked to create an Octave script that enumerates all While programs.
+\\\\
+We also know that it is possible to do a biyection between While programs and $\mathbb{N}$. As we did in the last exercise, it is just a matter of looping and printing the first N while codes with the tool we already have in our toolset, id est, N2WHILE.
+
+\begin{description}
+\itemsep0em 
+\item [function printNVectors(N)]
+\item for i=0 : N-1
+\addtolength{\itemindent}{0.80cm}
+\item disp( N2WHILE(i) )
+\addtolength{\itemindent}{0.00cm}
+\item end
+\item end
+\end{description}
+
+\setlength\parindent{0cm}
+
+Refer to the \emph{Git repository}\footnote{https://github.com/black-metroid/talf\_uwu} that I leave on the end of the document for more.
+
+\end{document}
